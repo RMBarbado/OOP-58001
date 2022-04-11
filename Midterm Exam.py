@@ -1,19 +1,23 @@
 from tkinter import *
+from tkinter import ttk
 window = Tk()
 
-window.geometry("550x400+10+20")
-window.title("Midterms in OOP")
+def Displayname():
+    txtfld['text'] = 'Fullname'
 
-lbl = Label(window, text = "Enter your fullname:", fg = "red", font = ("Arial", 10))
-lbl.place(x = 20, y = 60)
+window.geometry("500x250+10+20")
+window.title("Midterm in OOP")
 
-input_fn = Entry(window, text = "Fullname", bd = 5, width = 35)
-input_fn.place(x = 250, y = 60)
+label = Label(window, text = "Enter your fullname:", fg = "red")
+label.place(x=20, y=60)
 
-btn = Button(window, text = "Click to display your Fullname", fg = "red")
-btn.place(x = 20, y = 100)
+button = Button(window, text = "Click to display your Fullname", fg = "red", command = Displayname)
+button.place (x=20, y=100)
 
-disp_fn = Entry(window, text = "Fullname", bd = 5, width = 35)
-disp_fn.place(x = 250, y = 100)
+txtfld = Entry(window, textvariable = 'Fullname', bd = 5)
+txtfld.place(x=250, y=60)
+
+txtfld = Entry(window, text = 'name', bd = 5)
+txtfld.place(x=250, y=100)
 
 window.mainloop()
